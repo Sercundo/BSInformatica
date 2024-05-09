@@ -1,28 +1,99 @@
-document.getElementById('Contato').addEventListener('input', function(event) {
-    const conato = event.target.value
-  
-    if (contato.length === 8) {
-      getAddress();
-    }
+function enviarDados(event) {
+
+  event.preventDefault();
+  const formulario = document.getElementById("request");
+
+  console.log(formulario)
+  const formData = new FormData(formulario);
+  const jsonData = {};
+
+  formData.forEach((value, key) => {
+      jsonData[key] = value;
   });
+
+
+  console.log(jsonData)
+
+  fetch('http://localhost:8080/contato', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(jsonData)
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Erro ao enviar dados');
+      }
+      return response.json();
+  })
+  .then(data => {
+      // Aqui você pode lidar com a resposta do backend, se necessário
+      console.log('Resposta do servidor:', data);
+      alert(data.message)
+  })
+  .catch(error => {
+      console.error('Erro:', error);
+  });
+}
+
+
+function enviarWpp() {
+    const number = document.getElementById("number").value;
+    const nome = document.getElementById("nome").value;
   
-  // Função para buscar o endereço com base no CEP digitado
-  function getAddress() {
-    const cep = document.getElementById('cep')
+    
+    const jsonData = {
+        number,
+        nome
+    }
+
+    console.log(jsonData)
   
-    fetch(`https://viacep.com.br/ws/${contato}/json/`)
-      .then(response => response.json())
-      .then(data => {
-        if (data.erro) {
-          alert('CEP não encontrado.');
-          return;
+    fetch('http://localhost:3002/sendMessage', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao enviar dados');
         }
-        document.getElementById('Nome').value = data.nome;
-        document.getElementById('Email').value = data.email;
-        document.getElementById('telefone').value = data.telefone;
-        document.getElementById('Mensagem').value = data.mensagem;
-      })
-      .catch(error => {
-        console.error('Ocorreu um erro ao buscar o CEP:', error);
-      });
+        return response.json();
+    })
+    .then(data => {
+        // Aqui você pode lidar com a resposta do backend, se necessário
+        console.log('Resposta do servidor:', data);
+        alert(data.message)
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
   }
+  
+
+function buscarDados() {
+  fetch('http://localhost:8080/user', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(jsonData)
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Erro ao enviar dados');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log('Resposta do servidor:', data);
+      alert(data.message)
+  })
+  .catch(error => {
+      console.error('Erro:', error);
+  });
+}
+ 

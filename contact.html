@@ -94,11 +94,11 @@
                     <li class="nav-item active">
                       <a class="nav-link" href="contact.html">Contato</a>
                     </li>
-                    <li class="nav-item d_none">
+                    <!--<li class="nav-item d_none">
                       <a class="nav-link" href="#"
                         ><i class="fa fa-search" aria-hidden="true"></i
                       ></a>
-                    </li>
+                    </li> -->
                     <li class="nav-item d_none">
                       <a class="nav-link" href="#">Login</a>
                     </li>
@@ -124,44 +124,30 @@
         </div>
         <div class="row">
           <div class="col-md-10 offset-md-1">
-            <form id="request" class="main_form">
+            <form id="request" class="main_form" >
               <div class="row">
                 <div class="col-md-12">
                   <input
                     class="contactus"
-                    placeholder="Nome"
-                    type="type"
-                    name="Name"
-                  />
-                </div>
-                <div class="col-md-12">
-                  <input
-                    class="contactus"
-                    placeholder="Email"
-                    type="type"
-                    name="Email"
+                    placeholder="nome"
+                    type="text"
+                    name="nome"
+                    id="nome"
                   />
                 </div>
                 <div class="col-md-12">
                   <input
                     class="contactus"
                     placeholder="Telefone"
-                    type="type"
-                    name="Phone Number"
+                    type="text"
+                    name="number"
+                    id="number"
                   />
                 </div>
-                <div class="col-md-12">
-                  <textarea
-                    class="textarea"
-                    placeholder="Mensagem"
-                    type="type"
-                    Message="Name"
-                  >
-Mensagem </textarea
-                  >
                 </div>
+                <P style="color: white;">* Prencha os campos acima, para entrarmos em contato e tirarmos suas dúvidas.</P>
                 <div class="col-md-12">
-                  <button class="send_btn">Enviar</button>
+                  <button class="send_btn" type="button" onclick="enviarWpp()">Enviar</button>
                 </div>
               </div>
             </form>
@@ -223,6 +209,7 @@ Mensagem </textarea
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
               <form class="bottom_form">
+                <!--   
                 <h3>Fique por dentro das novidades</h3>
                 <input
                   class="enter"
@@ -231,6 +218,7 @@ Mensagem </textarea
                   name="Digite seu email"
                 />
                 <button class="sub_btn">Inscreva-se</button>
+              -->
               </form>
             </div>
           </div>
@@ -239,7 +227,7 @@ Mensagem </textarea
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <p>© 2023 Todos os direitos reservados.</p>
+                <p>© 2023/2024 Todos os direitos reservados.</p>
               </div>
             </div>
           </div>
@@ -255,5 +243,6 @@ Mensagem </textarea
     <!-- barra lateral -->
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/contato.js"></script>
   </body>
 </html>
