@@ -9,16 +9,26 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h2>Recuperação de Usuário</h2>
-                <form>
+                <form id="recoveryForm">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Digite seu email">
                     </div>
                     <button type="submit" class="btn btn-primary">Recuperar Usuário</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.history.back();">Voltar</button>
                 </form>
             </div>
         </div>
     </div>
-    <script src="Recuperar.js"></script> 
+    <script src="Recuperar.js"></script>
+    <script>
+        document.getElementById('recoveryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Aqui você pode adicionar o código para enviar os dados do formulário para o seu backend
+            var email = document.getElementById('email').value;
+            console.log(`Email: ${email}`);
+            // Substitua a linha acima pelo código para enviar os dados para o seu backend
+        });
+    </script>
 </body>
 </html>
