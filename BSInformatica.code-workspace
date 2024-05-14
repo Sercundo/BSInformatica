@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Desktop/express"
+		}
+	],
+	"settings": {
+		"cSpell.ignoreWords": [
+			"porta"
+		],
+		"liveServer.settings.multiRootWorkspaceName": "BSInformatica"
+	}
+}
