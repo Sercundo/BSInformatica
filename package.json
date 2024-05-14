@@ -1,0 +1,18 @@
+{
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "mysql2": "^3.9.7",
+        "nodemon": "^3.1.0"
+    },
+    "name": "bs-inform-api",
+    "version": "1.0.0",
+    "main": "script.js",
+    "scripts": {
+        "start": "nodemon script.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}
