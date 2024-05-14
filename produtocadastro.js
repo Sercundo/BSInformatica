@@ -13,7 +13,7 @@ const dbConfig = {
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  port:3002
+  port:3306
 };
 
 // Função para conectar ao banco de dados
