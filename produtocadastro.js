@@ -43,11 +43,11 @@ app.get('/api/produtos', async (req, res) => {
 
 // Rota para adicionar um novo produto
 app.post('/api/produtos', async (req, res) => {
-  const { nome, preco } = req.body;
+  const { nome, Descricao, codigo, cor } = req.body;
   try {
     const [result] = await (await db).execute(
-      'INSERT INTO produtos (nome, preco) VALUES (?, ?)',
-      [nome, preco]
+      'INSERT INTO produtos (nome, Descricao, codigo, cor) VALUES (?, ?, ?, ?)',
+      [nome, Descricao, codigo, cor]
     );
     res.status(201).json({ mensagem: 'Produto adicionado com sucesso.', id: result.insertId });
   } catch (error) {
@@ -58,11 +58,11 @@ app.post('/api/produtos', async (req, res) => {
 // Rota para atualizar um produto existente
 app.put('/api/produtos/:id', async (req, res) => {
   const { id } = req.params;
-  const { nome, preco } = req.body;
+  const { nome, Descricao, codigo, cor } = req.body;
   try {
     const [result] = await (await db).execute(
-      'UPDATE produtos SET nome = ?, preco = ? WHERE id = ?',
-      [nome, preco, id]
+      'UPDATE produtos SET nome = ?, Descricao = ?, codigo = ?, cor = ?  WHERE id = ?',
+      [nome, Descricao, codigo, cor]
     );
     if (result.affectedRows > 0) {
       res.send('Produto atualizado com sucesso.');
