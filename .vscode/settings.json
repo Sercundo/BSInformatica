@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "Configuração"
+    ],
+    "cSpell.ignoreWords": [
+        "mydb"
     ]
 }
