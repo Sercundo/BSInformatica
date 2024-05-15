@@ -46,8 +46,8 @@ app.post('/api/produtos', async (req, res) => {
   const { nome, Descricao, codigo, cor } = req.body;
   try {
     const [result] = await (await db).execute(
-      'INSERT INTO produtos (nome, Descricao, codigo, cor) VALUES (?, ?, ?, ?)',
-      [nome, Descricao, codigo, cor]
+      'INSERT INTO produtos (nome, descricao, codigo, cor) VALUES (?, ?, ?, ?)',
+      [nome, descricao, codigo, cor]
     );
     res.status(201).json({ mensagem: 'Produto adicionado com sucesso.', id: result.insertId });
   } catch (error) {
