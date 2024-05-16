@@ -8,7 +8,17 @@
     <div class="container">
         <h1>Produtos</h1>
         <button id="getProducts" class="btn btn-primary">Obter Produtos</button>
-        <ul id="productList" class="list-group mt-3"></ul>
+        <button id="clearTable" class="btn btn-secondary">Limpar Dados</button>
+        <button id="goBack" class="btn btn-default" onclick="window.history.back();">Voltar</button>
+        <table id="productTable" class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produto</th>
+                </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+        </table>
     </div>
     <script src="./js/revolution/js/lista.js"></script>
 </body>

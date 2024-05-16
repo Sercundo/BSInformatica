@@ -4,9 +4,10 @@ document.getElementById('getProducts').addEventListener('click', async () => {
     const productList = document.getElementById('productList');
     productList.innerHTML = '';
     products.forEach(product => {
-        const li = document.createElement('li');
-        li.textContent = product.nome;
-        li.classList.add('list-group-item');
-        productList.appendChild(li);
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        td.textContent = product.nome;
+        tr.appendChild(td);
+        productList.appendChild(tr);
     });
 });
