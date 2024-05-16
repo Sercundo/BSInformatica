@@ -1,5 +1,5 @@
 document.getElementById('getProducts').addEventListener('click', async () => {
-    const response = await fetch('/api/produtos');
+    const response = await fetch('http://localhost:3001/api/produtos');
     const products = await response.json();
     const productList = document.getElementById('productList');
     productList.innerHTML = '';
