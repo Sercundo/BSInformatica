@@ -4,7 +4,7 @@ document.getElementById('addProductForm').addEventListener('submit', async (even
             const descricao = document.getElementById('descricao').value;
             const codigo = document.getElementById('codigo').value;
             const cor = document.getElementById('cor').value;
-            const response = await fetch('/api/produtos', {
+            const response = await fetch('http://localhost:3001/api/produtos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
